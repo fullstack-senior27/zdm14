@@ -1,0 +1,6 @@
+Sensor that detect air quality and atmospheric conditions
+Sensor for ground quality for tree or plant
+Water quality sensor
+3D position sensor
+Earthquake sensor
+Fingerprint sensor

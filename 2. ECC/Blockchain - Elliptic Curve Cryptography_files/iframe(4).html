@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://aa.geeksforgeeks.org/iframe.html?code=GFG_ABP_Desktop_RightSideBar_BTF_300x600_3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recover</title>
+    <script src="./f.txt"></script>
+    <script>
+      window.addEventListener("message", function (event) {
+        try {
+          const eventData = JSON.parse(event.data);
+          if (eventData.hasOwnProperty("category")) {
+            window.arrPostCatName = eventData["category"];
+          }
+          if (eventData.hasOwnProperty("parentWidth")) {
+            window.parentInnerWidth = eventData["parentWidth"];
+          }
+          if (
+            eventData.hasOwnProperty("host") &&
+            (eventData["host"] == "gdevtest-ads.geeksforgeeks.org" ||
+              eventData["host"] == "www.geeksforgeeks.org" ||
+              eventData["host"] == "origin.geeksforgeeks.org")
+          ) {
+            const params = new Proxy(
+              new URLSearchParams(window.location.search),
+              {
+                get: (searchParams, prop) => searchParams.get(prop),
+              }
+            );
+
+            const tag = params.code;
+
+            const adKeyword = document.createElement("div");
+            adKeyword.style =
+              "position:absolute;top:8px;left:8px;font-family:Verdana,Geneva,sans-serif;font-size:10px;font-weight:400;z-index:999;text-transform:uppercase;color:#fff;background-color:rgba(0,0,0,.55);line-height:13px;padding:2px 4px;box-sizing:border-box;cursor:default;box-shadow:rgba(255,255,255,.55)1px 1px 2px;border-radius:0 0 2px;padding:4px;";
+            adKeyword.innerHTML = "AD";
+            document.body.appendChild(adKeyword);
+
+            const div = document.createElement("div");
+            div.setAttribute("id", tag);
+            document.body.appendChild(div);
+
+            const prebid = document.createElement("script");
+            prebid.src = "https://cdnads.geeksforgeeks.org/adblock/prebid.js";
+            document.head.appendChild(prebid);
+
+            const script = document.createElement("script");
+            script.src =
+              "https://cdnads.geeksforgeeks.org/adblock/gfg_abp_ads.min.js";
+            document.head.appendChild(script);
+          }
+        } catch (err) {}
+      });
+    </script>
+  <script src="./prebid(1).js.download"></script><script src="./gfg_abp_ads.min.js.download"></script></head>
+<body>
+<div style="position: absolute; top: 8px; left: 8px; font-family: Verdana, Geneva, sans-serif; font-size: 10px; font-weight: 400; z-index: 999; text-transform: uppercase; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.55); line-height: 13px; box-sizing: border-box; cursor: default; box-shadow: rgba(255, 255, 255, 0.55) 1px 1px 2px; border-radius: 0px 0px 2px; padding: 4px;">AD</div><div id="GFG_ABP_Desktop_RightSideBar_BTF_300x600_3"></div></body></html>
